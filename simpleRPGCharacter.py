@@ -46,10 +46,25 @@ def build_character(level):
     curses = [] #list of curses
     quests = [] #list of quests
     tasks = [] #list of tasks
+      # Special quest for Zev
+    special_quest = "Discover the secrets of Zev's existence as a Dark Puppeteer and Master Strategist and become a Prime Vassal for a Chaotic Lord"
+    quests.append(special_quest)
+    tasks.append("Wear armor (previously prevented by a blessing)")
+    tasks.append("Access full character sheet and status windows")
+    tasks.append("Understand powers as a sentient NPC")
     experience = (level * (level - 1) * 500)
-    
-    return Character(level, name, character_class, alignment, stats, skills, talents, abilities,
-                    
+    return Character(level, name, character_class, alignment, stats, skills, talents, abilities, marks, blessings, curses, quests, tasks, experience)
+
+def generate_quests():
+    quest_list = []
+    quest_list.append("Rescue the Prince from the Dragon's lair")
+    quest_list.append("Collect the rare herbs to cure the Queen's illness")
+    quest_list.append("Discover the lost city of gold")
+    quest_list.append("Defend the village from the invading army")
+    quest_list.append("Retrieve the stolen artifact from the thieves' hideout")
+    quest_list.append("Destroy the evil cult's stronghold")
+    return quest_list
+
 def main():
     level = 28
     character = build_character(level)
